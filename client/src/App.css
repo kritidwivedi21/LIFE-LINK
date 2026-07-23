@@ -1,0 +1,462 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #fff5f5;
+  color: #222;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #b71c1c, #e53935);
+  color: white;
+  padding: 18px 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 24px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.links a:hover {
+  color: #ffdede;
+  transform: translateY(-2px);
+}
+
+.footer {
+  background: #1f1f1f;
+  color: #aaa;
+  text-align: center;
+  padding: 15px;
+  margin-top: 50px;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.footer p {
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+
+/* HERO CONTAINER BACKDROP FIX */
+.hero, .hero-section, .hero-container {
+  background: linear-gradient(135deg, #fff5f5, #ffe0e0);
+  text-align: left; /* Image design se match karne ke liye left align kiya */
+  padding: 90px 50px;
+}
+
+.hero h1, .hero-section h1, .hero-container h1 {
+  color: #b71c1c;
+  font-size: 48px;
+  margin-bottom: 15px;
+  animation: fadeDown 1s ease;
+}
+
+.hero p, .hero-section p, .hero-container p {
+  font-size: 19px;
+  color: #555;
+}
+
+/* FIX: "BECOME A DONOR" GLOBAL BUTTON FIX */
+.hero button, 
+.hero-container button, 
+.hero-section button, 
+.home-page > button {
+  margin-top: 25px;
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #c62828, #e53935);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(198, 40, 40, 0.3);
+  display: inline-block;
+}
+
+.hero button:hover, 
+.hero-container button:hover, 
+.hero-section button:hover, 
+.home-page > button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(198, 40, 40, 0.45);
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+}
+
+.card {
+  width: 200px;
+  background: white;
+  padding: 25px;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(198, 40, 40, 0.2);
+}
+
+.card h2 {
+  color: #c62828;
+}
+
+.register-page,
+.stock-page,
+.request-page,
+.dashboard {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.register-page h1,
+.stock-page h1,
+.request-page h1,
+.dashboard h1 {
+  color: #b71c1c;
+  margin-bottom: 35px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.donor-form,
+.request-form,
+.form-container form {
+  width: 430px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 35px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.14);
+  transition: 0.3s ease;
+}
+
+.donor-form:hover,
+.request-form:hover,
+.form-container form:hover {
+  box-shadow: 0 12px 30px rgba(198, 40, 40, 0.18);
+}
+
+.donor-form input,
+.donor-form select,
+.donor-form textarea,
+.request-form input,
+.request-form select,
+.request-form textarea,
+.form-container input,
+.form-container select {
+  padding: 13px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.donor-form input:focus,
+.donor-form select:focus,
+.request-form input:focus,
+.request-form select:focus,
+.form-container input:focus,
+.form-container select:focus {
+  border-color: #c62828;
+  box-shadow: 0 0 8px rgba(198, 40, 40, 0.2);
+}
+
+.donor-form button,
+.request-form button,
+.form-container button {
+  background: linear-gradient(135deg, #c62828, #e53935);
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 17px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.donor-form button:hover,
+.request-form button:hover,
+.form-container button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(198, 40, 40, 0.35);
+}
+
+.stock-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.stock-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+  transition: 0.3s ease;
+}
+
+.stock-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(198, 40, 40, 0.2);
+}
+
+.stock-card h2 {
+  color: #c62828;
+  font-size: 32px;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin: 35px 0;
+}
+
+.dashboard-card {
+  background: white;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+  transition: 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 25px rgba(198, 40, 40, 0.2);
+}
+
+.dashboard-card h2 {
+  color: #c62828;
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.dashboard-table,
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-table th,
+.dashboard-table td,
+table th,
+table td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.dashboard-table th,
+table th {
+  background: #c62828;
+  color: white;
+}
+
+.dashboard-table tr:hover,
+table tr:hover {
+  background: #fff1f1;
+}
+
+.home-page {
+  min-height: 80vh;
+}
+
+.why-section {
+  text-align: center;
+  padding: 70px 20px;
+  background: white;
+}
+
+.why-section h2,
+.blood-section h2 {
+  font-size: 32px;
+  color: #b71c1c;
+  margin-bottom: 15px;
+}
+
+.why-section > p {
+  max-width: 650px;
+  margin: 0 auto 40px;
+  color: #666;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.info-cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.info-card {
+  width: 250px;
+  padding: 30px 25px;
+  background: #fff5f5;
+  border-radius: 18px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(198, 40, 40, 0.2);
+}
+
+.info-icon {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.info-card h3 {
+  color: #c62828;
+  font-size: 21px;
+}
+
+.info-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.blood-section {
+  text-align: center;
+  padding: 70px 20px;
+  background: #fff5f5;
+}
+
+.section-subtitle {
+  color: #666;
+  font-size: 17px;
+}
+
+.cta-section {
+  text-align: center;
+  padding: 75px 20px;
+  background: linear-gradient(135deg, #b71c1c, #e53935);
+  color: white;
+}
+
+.cta-section h2 {
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+.cta-section p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.cta-section button {
+  padding: 14px 30px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #c62828;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cta-section button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .links a {
+    margin: 8px;
+    display: inline-block;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .donor-form,
+  .request-form,
+  .form-container form {
+    width: 95%;
+  }
+
+  .dashboard-table,
+  table {
+    font-size: 14px;
+  }
+}
+
+.donor-form button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #d62828, #ff4d4d);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.donor-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(214, 40, 40, 0.3);
+}
+
+.donor-form button:active {
+  transform: scale(0.98);
+}
